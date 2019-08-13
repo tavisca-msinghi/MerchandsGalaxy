@@ -61,6 +61,7 @@ public class MerchantGalaxyTest {
     }
     @Test
     void canFindUnknownValue(){
+
         FindUnknownValue findUnknownValue = new FindUnknownValue();
         CheckStringType checkStringType = new CheckStringType();
         RomanToNumeric romanToNumeric = new RomanToNumeric();
@@ -74,11 +75,24 @@ public class MerchantGalaxyTest {
         String[] outputs = checkStringType.stringType("glob glob Silver is 34 Credits");
 
         int romanDigitValue = romanToNumeric.ToNumeric(wordToRoman.ToRoman(outputs));
-        int value = Integer.parseInt(outputs[2]);
+        findUnknownValue.unknownValue(romanDigitValue, Integer.parseInt(outputs[2]), outputs[1]);
 
-        assertEquals(17, findUnknownValue.unknownValue(romanDigitValue, value, outputs[1]));
+        outputs = checkStringType.stringType("glob prok Gold is 57800 Credits");
+
+        romanDigitValue = romanToNumeric.ToNumeric(wordToRoman.ToRoman(outputs));
+        findUnknownValue.unknownValue(romanDigitValue, Integer.parseInt(outputs[2]), outputs[1]);
+
+        outputs = checkStringType.stringType("pish pish Iron is 3910 Credits");
+
+        romanDigitValue = romanToNumeric.ToNumeric(wordToRoman.ToRoman(outputs));
+        findUnknownValue.unknownValue(romanDigitValue, Integer.parseInt(outputs[2]), outputs[1]);
+
+        outputs = checkStringType.stringType("how much is pish tegj glob glob ?");
+
+        assertEquals(42,findUnknownValue.stringCalculation(outputs));
 
 
     }
+
 
 }
