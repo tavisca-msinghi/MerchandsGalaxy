@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="com.tavisca.workshop.Mgtg.main" target="1.10" />
+      <module name="com.tavisca.workshop.Mgtg.test" target="1.10" />
+      <module name="com.tavisca.workshops.Mgtg.main" target="1.10" />
+      <module name="com.tavisca.workshops.Mgtg.test" target="1.10" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
