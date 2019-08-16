@@ -37,3 +37,9 @@ tasks.named<Test>("hidden-tests") {
         events("passed", "skipped", "failed")
     }
 }
+
+val jar by tasks.getting(Jar::class){
+    manifest{
+        attributes["Main-Class"] = "com.tavisca.workshop.Mgtg.Main"
+    }
+}

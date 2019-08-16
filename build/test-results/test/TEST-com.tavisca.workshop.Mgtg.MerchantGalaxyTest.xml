@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2019-08-14T05:19:31" hostname="RENTLAPT0084" time="0.101">
+<testsuite name="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2019-08-16T09:56:32" hostname="RENTLAPT0084" time="0.088">
   <properties/>
-  <testcase name="canParseTocalculateMetal()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.035"/>
-  <testcase name="parseToCheckString()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.024"/>
-  <testcase name="canParserWordToRoman()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.001"/>
+  <testcase name="canParseTocalculateMetal()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.034"/>
+  <testcase name="parseToCheckString()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.021"/>
+  <testcase name="canParserWordToRoman()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.002"/>
   <testcase name="canParseToCredits()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.002"/>
-  <testcase name="canWordToRoman()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.023"/>
+  <testcase name="canWordToRoman()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.014"/>
   <testcase name="canRomanToNumeric()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.004"/>
   <testcase name="canParseTocalculate()" classname="com.tavisca.workshop.Mgtg.MerchantGalaxyTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
