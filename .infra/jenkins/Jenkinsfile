@@ -35,9 +35,9 @@ pipeline {
         {
             steps {
                 sh script: '''
+                    docker build --no-cache -t Mgtg:latest -f .infra/docker/Dockerfile .
 
                     echo "I am Building DockerImage ="
-                    docker build -t builddocker
 
                 ''',
             label: "Building Docker Image"
@@ -47,6 +47,9 @@ pipeline {
         {
             steps {
                 sh script: '''
+                    docker login -u rock2manoj -p dilneacet2p
+                    docker tag Mgtg:latest rock2manoj/Mgtg:latest
+                    docker push rock2manoj/Mgtg:latest
                     echo "I am Pubishing DockerImage ="
                 ''',
             label: "Publishing Docker Image"
