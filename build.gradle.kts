@@ -1,6 +1,8 @@
 plugins {
     java
+    id ("org.sonarqube") version "2.7"
 }
+
 group = "com.tavisca.workshop.Mgtg"
 version = "1.0-SNAPSHOT"
 repositories {
