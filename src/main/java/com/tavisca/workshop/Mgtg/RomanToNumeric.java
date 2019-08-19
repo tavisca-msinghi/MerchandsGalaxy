@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class RomanToNumeric {
 
-    HashMap<Character,Integer>RomanToNumericHashMap = new HashMap<>(){{
+    HashMap<Character,Integer>RomanToNumericHashMap = new HashMap<Character, Integer>(){{
         put('I',1);
         put('V',5);
         put('X',10);

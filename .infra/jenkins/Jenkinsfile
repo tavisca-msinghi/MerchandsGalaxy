@@ -1,0 +1,64 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh script: '''
+                chmod +x gradlew
+                    echo "I am in build step"
+                    ./gradlew build
+                ''',
+            label: "Building Project"
+            }
+        }
+        stage('Test')
+        {
+            steps {
+                sh script: '''
+                    chmod +x gradlew
+                    echo "I am in Test step"
+                    ./gradlew test
+                ''',
+            label: "Running Unit Test Cases"
+            }
+        }
+        stage('Static Code Analysis')
+        {
+            steps {
+                sh script: '''
+                    echo "I am in Sonarqube scan"
+                    ./gradlew sonarqube \
+                      -Dsonar.projectKey=tavisca-msinghi_MerchandsGalaxy \
+                      -Dsonar.organization=tavisca-msinghi \
+                      -Dsonar.host.url=https://sonarcloud.io \
+                      -Dsonar.login=3ea2b82450f018910b3d72fb201c49a86ae7c7b8
+                ''',
+            label: "Running Sonarqube Scan"
+            }
+        }
+        stage('Build DockerImage')
+        {
+            steps {
+                sh script: '''
+                    docker build --no-cache -t mgtg:latest -f .infra/docker/Dockerfile .
+
+                    echo "I am Building DockerImage ="
+
+                ''',
+            label: "Building Docker Image"
+            }
+        }
+        stage('Publish DockerImage')
+        {
+            steps {
+                sh script: '''
+                    docker login -u rock2manoj -p dilneacet2p
+                    docker tag mgtg:latest rock2manoj/mgtg:latest
+                    docker push rock2manoj/mgtg:latest
+                    echo "I am Pubishing DockerImage ="
+                ''',
+            label: "Publishing Docker Image"
+            }
+        }
+    }
+}
